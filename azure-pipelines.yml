@@ -15,10 +15,14 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+  env:
+    name:  DEV_US_00
+    resourceType: VirtualMachine
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: true
     zipAfterPublish: false
-   
+
+
 
