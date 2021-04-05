@@ -10,7 +10,10 @@ jobs:
   pool:
     vmImage: 'Ubuntu-16.04'
   # creates an environment if it doesn't exist
-  environment: 'DEV_US_00'
+  environment:
+    name: DEV_US_00
+    resourceType: VirtualMachine
+    tags: web
   strategy:
     # default deployment strategy, more coming...
     runOnce:
